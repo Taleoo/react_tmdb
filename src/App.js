@@ -24,13 +24,12 @@ const App = () => {
   }, [searchValue]);
 
 	return (
-		<div className='container movie-app'>
-			<div className='grid-rows-2 flex flex-row'>
-      <MovieHeader heading='Movies' />
-      <SearchInput searchValue={searchValue} setSearchValue={setSearchValue} />
+		<div className='container grid grid-rows-auto  '>
+			<div className='grid-rows-1 flex flex-row h-20' id="bckg">
+      <SearchInput searchValue={searchValue} setSearchValue={setSearchValue}/>
 			</div>
-      <div className='grid-rows-1'>
-				<MovieList movies={movies} />
+      <div className=' gap-5 flex flex-row flex-wrap justify-around'>
+				<MovieList movies={movies} />    
 			</div>
 		</div>
 	);
