@@ -5,9 +5,9 @@ import Autosuggest from 'react-autosuggest';
 const SearchInput = (props) => {
     
 	return (
-		<div>
+		<div className="mx-auto">
 			<input
-        class="h-8 w-60 mt-5 text-center"
+        className="h-8 w-60 mt-5 text-center"
 				value={props.value}
         onChange={
           (event) => props.setSearchValue(event.target.value)

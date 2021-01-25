@@ -4,6 +4,7 @@ import 'tailwindcss/dist/tailwind.min.css';
 import './App.css';
 import MovieHeader from './components/MovieHeader';
 import SearchInput from './components/SearchInput';
+import MovieTrending from './components/PopularMovies';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -18,7 +19,6 @@ const App = () => {
     {setMovies(data.results)}
 		
   };
-  console.log(movies);
 	useEffect(() => {
     getMovieRequest(searchValue);
   }, [searchValue]);
@@ -26,9 +26,15 @@ const App = () => {
 	return (
 		<div className='container grid grid-rows-auto  '>
 			<div className='grid-rows-1 flex flex-row h-20' id="bckg">
+        
       <SearchInput searchValue={searchValue} setSearchValue={setSearchValue}/>
 			</div>
-      <div className=' gap-5 flex flex-row flex-wrap justify-around'>
+      <h1 className="text-center text-gray-600 text-3xl">Trending Movies</h1>
+      <div className=' gap-3 flex flex-col md:flex-row flex-nowrap justify-around slider'>
+        
+      <MovieTrending />
+      </div>
+      <div className=' gap-3 flex flex-col md:flex-row flex-nowrap justify-around slider'>
 				<MovieList movies={movies} />    
 			</div>
 		</div>
